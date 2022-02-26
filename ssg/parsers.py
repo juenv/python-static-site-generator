@@ -4,7 +4,7 @@ import shutil
 
 class Parser:
     
-    self.extensions = []
+    self.extensions : List[str] = []
 
     def valid_extension(self, extension):
         return extension in self.extensions
@@ -13,7 +13,7 @@ class Parser:
         raise NotImplementedError
 
     def read(self, path):
-        with open(path) as file:
+        with open(path, "r") as file:
             return file.read()
 
     def write(self, path, dest, content, ext=".html"):
